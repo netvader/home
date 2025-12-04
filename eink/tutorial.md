@@ -22,7 +22,7 @@ Thonny is a Integrated Development Environment (IDE), a tool that helps you writ
 
 ## Loading a Program
 
-Now that you have Thonny installed and your Badger 2040 connected, let's walk through the process of loading a program onto your badge. While you could write one from scratch (see the [feature and function reference](/2040reference.md) later), this can be a complex and error-prone process, so we'll begin by loading some prebuilt programs (which we'll call "apps") onto the device.
+Now that you have Thonny installed and your Badger 2040 connected, let's walk through the process of loading a program onto your badge. While you could write one from scratch (see the [feature and function reference](/eink/2040reference.md) later), this can be a complex and error-prone process, so we'll begin by loading some prebuilt programs (which we'll call "apps") onto the device.
 
 ### Each of these apps has two parts:
 
