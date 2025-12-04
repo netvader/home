@@ -1,6 +1,6 @@
 # Loading Apps onto Your Universe Badge
 
-Welcome to the GitHub Universe badge tutorial, using the Badger 2040 (or 2350) by [Pimoroni](https://pimoroni.com). This will walk you through the process of loading a simple app onto your badge. Once you've completed this tutorial, you'll know how to install other apps (available in the [examples](/examples) folder), and be ready to learn how to create your own Badger programs as well!
+Welcome to the GitHub Universe badge tutorial, using the Badger 2040 (or 2350) by [Pimoroni](https://pimoroni.com). This will walk you through the process of loading a simple app onto your badge. Once you've completed this tutorial, you'll know how to install other apps (available in the [examples](/eink/examples) folder), and be ready to learn how to create your own Badger programs as well!
 
 ## Using the Thonny IDE for Badger programming
 
