@@ -91,7 +91,7 @@ Now that you've loaded your first app, reconnect the badge to your computer and 
 
 ![Copying files in Thonny IDE](tutorial_load_files.png)
 
-When you tire of prebuilt examples, try building a program of your own. Find an example you can modify, or read the [feature and function reference](/2040reference.md) to dig deeper. 
+When you tire of prebuilt examples, try building a program of your own. Find an example you can modify, or read the [feature and function reference](/eink/2040reference.md) to dig deeper. 
 
 If you build something fun, consider open-sourcing your code so other attendees can try it out.
 
