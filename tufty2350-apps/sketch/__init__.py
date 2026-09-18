@@ -6,7 +6,7 @@ os.chdir("/system/apps/sketch")
 import ui
 
 
-canvas = image(0, 0, ui.canvas_area[2], ui.canvas_area[3])
+canvas = image(ui.canvas_area[2], ui.canvas_area[3])
 cursor = (ui.canvas_area[2] / 2, ui.canvas_area[3] / 2)
 mona_position = (10, 76)
 mona_target = (10, 76)

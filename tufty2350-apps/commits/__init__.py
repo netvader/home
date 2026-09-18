@@ -330,8 +330,8 @@ def intro():
     # Draw sample bricks
     for i in range(3):
         x = 50 + i * 20
-        color = COMMIT_COLORS[i]
-        screen.pen = color.rgb(*color)
+        brick_color = COMMIT_COLORS[i]
+        screen.pen = color.rgb(*brick_color)
         screen.shape(shape.rectangle(x, 105, SQUARE_SIZE, SQUARE_SIZE))
     
     if badge.pressed(BUTTON_UP) or badge.pressed(BUTTON_B):

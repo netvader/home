@@ -135,8 +135,8 @@ def intro():
     # Draw some sample commits
     for i in range(3):
         x = 50 + i * 20
-        color = COMMIT_COLORS[i]
-        screen.pen = color.rgb(*color)
+        commit_color = COMMIT_COLORS[i]
+        screen.pen = color.rgb(*commit_color)
         screen.shape(shape.rectangle(x, 90, SQUARE_SIZE, SQUARE_SIZE))
     
     if badge.pressed(BUTTON_A):

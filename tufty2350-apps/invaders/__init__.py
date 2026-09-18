@@ -74,13 +74,13 @@ class Alien:
         
         # Different colors for different alien types
         if self.alien_type == 0:
-            color = (255, 50, 50)  # Red
+            alien_color = (255, 50, 50)  # Red
         elif self.alien_type == 1:
-            color = (255, 150, 50)  # Orange
+            alien_color = (255, 150, 50)  # Orange
         else:
-            color = (255, 255, 50)  # Yellow
-            
-        screen.pen = color.rgb(*color)
+            alien_color = (255, 255, 50)  # Yellow
+
+        screen.pen = color.rgb(*alien_color)
         
         # Body
         screen.shape(shape.rectangle(self.x + 1, self.y + 2, 8, 4))
@@ -94,7 +94,7 @@ class Alien:
             screen.shape(shape.rectangle(self.x + 6, self.y + 4, 2, 1))
         
         # Antennae
-        screen.pen = color.rgb(*color)
+        screen.pen = color.rgb(*alien_color)
         screen.shape(shape.rectangle(self.x + 1, self.y, 2, 2))
         screen.shape(shape.rectangle(self.x + 7, self.y, 2, 2))
     
