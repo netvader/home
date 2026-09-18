@@ -188,7 +188,7 @@ def get_user_data(user, force_update=False):
     
     try:
         r = json.loads(open("/user_data.json", "r").read())
-        user.name = r.get("name", user.handle) # Fallback to handle if user does not have a name
+        user.name = r.get("name") or user.handle # Fallback to handle if user does not have a name set (GitHub returns "name": null, not a missing key, so .get()'s default never applied)
         user.handle = r.get("login", "Unknown Handle")
         user.followers = r.get("followers", 0)
         user.repos = r.get("public_repos", 0)
