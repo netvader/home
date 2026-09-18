@@ -115,10 +115,26 @@ this as a solid first draft, flash it, and report back what breaks.
 1. Flash the latest `-with-filesystem` firmware from
    [pimoroni/tufty2350/releases](https://github.com/pimoroni/tufty2350/releases/latest).
 2. Double-tap `RESET` to enter disk mode; a `Tufty2350` drive appears.
-3. Copy whichever app folders you want into `apps/` on that drive.
-4. Fill in `secrets.py` (a template is in this folder) with your Wi-Fi
-   details and, for `badge`, your GitHub username.
+3. Run `./install.sh` (see below) to copy the apps and `secrets.py` onto it.
+4. Fill in `secrets.py` on the drive with your Wi-Fi details and, for
+   `badge`, your GitHub username.
 5. Eject and reset.
 
-On macOS, run `export COPYFILE_DISABLE=1` before copying, otherwise
-Finder scatters `._xxx` AppleDouble files across the FAT32/exFAT volume.
+### `install.sh`
+
+```sh
+./install.sh                              # install everything to /Volumes/TUFTY
+./install.sh /Volumes/TUFTY badge flappy  # install just two apps
+./install.sh /Volumes/BADGER              # different volume name/mount point
+```
+
+On macOS, copying files onto a non-HFS+ volume (the badge's FAT32/exFAT
+filesystem) with Finder or plain `cp` scatters `._xxx` "AppleDouble"
+sidecar files everywhere. The on-device menu doesn't expect these when it
+scans `/system/apps/` for icons, and can crash with `cannot load PNG:
+corrupt or truncated data` while trying to read one. `install.sh` sets
+`COPYFILE_DISABLE=1` before copying (which stops macOS writing them in
+the first place) and sweeps up any that appear anyway. If you'd rather
+copy manually, just `export COPYFILE_DISABLE=1` in your shell first - and
+if a badge already has `._*` files on it from an earlier copy, delete
+them (`find /Volumes/TUFTY -name '._*' -delete`) before rebooting it.
