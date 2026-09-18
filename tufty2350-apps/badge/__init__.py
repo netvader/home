@@ -48,13 +48,20 @@ def get_connection_details(user):
         # `secrets.py` can be imported on the device. Clean up sys.path afterwards.
         sys.path.insert(0, "/")
         try:
-            from secrets import WIFI_PASSWORD, WIFI_SSID, GITHUB_USERNAME, GITHUB_TOKEN
+            import secrets
         finally:
             # ensure we remove the path we inserted even if import fails
             try:
                 sys.path.pop(0)
             except Exception:
                 pass
+        # read each value individually so a missing *optional* one (like
+        # GITHUB_TOKEN, which secrets.py doesn't have to define) doesn't
+        # take down WiFi and the required GITHUB_USERNAME with it
+        WIFI_PASSWORD = getattr(secrets, "WIFI_PASSWORD", None)
+        WIFI_SSID = getattr(secrets, "WIFI_SSID", None)
+        GITHUB_USERNAME = getattr(secrets, "GITHUB_USERNAME", None)
+        GITHUB_TOKEN = getattr(secrets, "GITHUB_TOKEN", None)
     except ImportError as e:
         # If the user hasn't created a secrets.py file, fall back to None so
         # the rest of the app can detect missing credentials and show helpful UI.
