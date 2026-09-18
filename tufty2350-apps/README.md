@@ -138,3 +138,33 @@ the first place) and sweeps up any that appear anyway. If you'd rather
 copy manually, just `export COPYFILE_DISABLE=1` in your shell first - and
 if a badge already has `._*` files on it from an earlier copy, delete
 them (`find /Volumes/TUFTY -name '._*' -delete`) before rebooting it.
+
+### `tools/enable_autoboot.py`
+
+The stock firmware always boots into the menu - there's no built-in way to
+boot straight into one app. This patches the menu itself
+(`/system/apps/menu/__init__.py`) so a cold boot (power-on or the RESET
+button) launches a chosen app instead, while `HOME` still returns to the
+menu exactly as before (HOME triggers a watchdog reset, a different
+`reset_cause()` than a real power-on/RESET, so the patch's check doesn't
+apply to it - no per-app code needed for that part).
+
+```sh
+python3 tools/enable_autoboot.py badge     # boot straight into the badge app
+python3 tools/enable_autoboot.py --disable # back to booting into the menu
+```
+
+Notes:
+
+- Requires the badge connected over USB in its normal running mode (not
+  disk mode) - it talks to it over `mpremote`, the same way the icon/font
+  bug hunts elsewhere in this README did.
+- Idempotent: running it again (even for a different app) replaces the
+  previously-installed patch rather than stacking copies.
+- It writes directly to the normally read-only `/system` partition (the
+  same raw flash remount trick `ccstats`' own installer uses) - this
+  changes real firmware behaviour, and a Pimoroni firmware update will
+  reset the stock menu, so the patch needs re-applying afterwards.
+- A *soft* reset issued over `mpremote` doesn't reliably register as the
+  `PWRON_RESET` cause the patch looks for - to actually test it, power-cycle
+  the badge or press its physical RESET button, not `mpremote reset`.
