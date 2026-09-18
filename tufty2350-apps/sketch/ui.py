@@ -5,7 +5,7 @@ screen.antialias = image.X2
 canvas_area = (10, 15, 140, 85)
 
 font = font.vest
-mona = Animation(SpriteSheet("/system/assets/mona-sprites/mona-dance.png", 6, 1))
+mona = Animation(SpriteSheet("assets/mona-dance.png", 6, 1))
 
 
 def draw_mona(pos, direction):

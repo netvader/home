@@ -178,7 +178,7 @@ animations = {
 
 # load the spritesheets for monas animations
 for name, frame_count in animations.items():
-  sprites = SpriteSheet(f"/system/assets/mona-sprites/mona-{name}.png", frame_count, 1)
+  sprites = SpriteSheet(f"assets/mona-{name}.png", frame_count, 1)
   Mona._animations[name] = Animation(sprites)  # noqa: SLF001
 print("done")
 
