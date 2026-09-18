@@ -15,8 +15,8 @@ import json
 phosphor = color.rgb(211, 250, 55, 150)
 white = color.rgb(235, 245, 255)
 faded = color.rgb(235, 245, 255, 100)
-small_font = font.load("/system/assets/fonts/ark.ppf")
-large_font = font.load("/system/assets/fonts/absolute.ppf")
+small_font = font.ark
+large_font = font.absolute
 
 WIFI_TIMEOUT = 60
 CONTRIB_URL = "https://github.com/{user}.contribs"

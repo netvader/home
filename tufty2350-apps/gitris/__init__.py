@@ -68,15 +68,9 @@ COL_GHOST = color.rgb(240, 246, 252, 70)
 COL_LOCK  = color.rgb(240, 246, 252, 24)
 
 # ---------------- Font ----------------
-def _load_font():
-    for path in ("/system/assets/fonts/tiny.ppf",
-                 "/system/assets/fonts/6x8.ppf",
-                 "/system/assets/fonts/ark.ppf"):
-        try:
-            screen.font = font.load(path); return
-        except Exception:
-            pass
-_load_font()
+# note: the .ppf files this used to probe for no longer exist on disk on
+# the current firmware - ark is a ROM font, always available by name.
+screen.font = font.ark
 
 # ---------------- Game state ----------------
 state = {

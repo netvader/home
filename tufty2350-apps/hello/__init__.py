@@ -2,7 +2,7 @@ import sys
 import os
 
 # Load a cool font
-font = font.load("/system/assets/fonts/absolute.ppf")
+font = font.absolute
 
 def update():
     # Clear the screen with black background

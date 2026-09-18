@@ -69,7 +69,7 @@ class rq:  # Mimic minimal urequests-like interface used by this app
         return _HTTPResponse(raw)
 
 # Load fonts - use smaller, more compact fonts
-small_font = font.load("/system/assets/fonts/ark.ppf")
+small_font = font.ark
 
 # ---------------------------------------------------------------------------
 # Utility helpers

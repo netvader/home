@@ -78,7 +78,7 @@ def set_palette(name):
     if name in NEIGHBOR_PALETTES:
         ACTIVE_PALETTE = name
         NEIGHBOR_COLORS = NEIGHBOR_PALETTES[ACTIVE_PALETTE]
-        NEIGHBOR_BRUSHES = [color.rgb(*color) for color in NEIGHBOR_COLORS]
+        NEIGHBOR_BRUSHES = [color.rgb(*c) for c in NEIGHBOR_COLORS]
         BACKGROUND_COLOR = NEIGHBOR_COLORS[0]
         BACKGROUND_BRUSH = color.rgb(*BACKGROUND_COLOR)
     else:
@@ -91,7 +91,7 @@ BACKGROUND_COLOR = NEIGHBOR_COLORS[0]
 TEXT_COLOR = (255, 255, 255)
 
 # Pre-create brushes for performance
-NEIGHBOR_BRUSHES = [color.rgb(*color) for color in NEIGHBOR_COLORS]
+NEIGHBOR_BRUSHES = [color.rgb(*c) for c in NEIGHBOR_COLORS]
 BACKGROUND_BRUSH = color.rgb(*BACKGROUND_COLOR)
 TEXT_BRUSH = color.rgb(*TEXT_COLOR)
 INFO_BG_BRUSH = color.rgb(0, 0, 0, 200)
@@ -106,7 +106,7 @@ GRID_HEIGHT = 30  # 120 / 4
 STATIC_LIFE_PROBABILITY = 0.4
 
 # Load font
-small_font = font.load("/system/assets/fonts/nope.ppf")
+small_font = font.nope
 
 # Pre-create shape for cells (reused for all cells)
 cell_rect = shape.rectangle(0, 0, SQUARE_SIZE, SQUARE_SIZE)

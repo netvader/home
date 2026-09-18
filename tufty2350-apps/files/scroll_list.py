@@ -1,7 +1,7 @@
 
-small_font = font.load("/system/assets/fonts/ark.ppf")
+small_font = font.ark
 small_char_width = 7
-large_font = font.load("/system/assets/fonts/absolute.ppf")
+large_font = font.absolute
 
 SCREEN_WIDTH = 160
 SCREEN_HEIGHT = 120

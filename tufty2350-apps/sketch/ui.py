@@ -4,7 +4,7 @@ from badgeware_compat import SpriteSheet, Animation
 screen.antialias = image.X2
 canvas_area = (10, 15, 140, 85)
 
-font = font.load("/system/assets/fonts/vest.ppf")
+font = font.vest
 mona = Animation(SpriteSheet("/system/assets/mona-sprites/mona-dance.png", 6, 1))
 
 

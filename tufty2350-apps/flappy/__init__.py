@@ -5,14 +5,12 @@ sys.path.insert(0, "/system/apps/flappy")
 os.chdir("/system/apps/flappy")
 from mona import Mona
 from obstacle import Obstacle
-from badgeware_compat import SpriteSheet, Animation
 
 background = image.load("assets/background.png")
 grass = image.load("assets/grass.png")
 cloud = image.load("assets/cloud.png")
-large_font = font.load("/system/assets/fonts/ziplock.ppf")
-small_font = font.load("/system/assets/fonts/nope.ppf")
-ghost = Animation(SpriteSheet("/system/assets/mona-sprites/mona-dead.png", 7, 1))
+large_font = font.ziplock
+small_font = font.nope
 mona = None
 
 

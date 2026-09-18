@@ -19,7 +19,7 @@ GRID_WIDTH = 40  # 160 / 4
 GRID_HEIGHT = 30  # 120 / 4
 
 # Load font
-small_font = font.load("/system/assets/fonts/nope.ppf")
+small_font = font.nope
 
 class GameState:
     INTRO = 1

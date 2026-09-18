@@ -9,8 +9,8 @@ import json
 import gc
 
 # Load fonts
-small_font = font.load("/system/assets/fonts/ark.ppf")
-large_font = font.load("/system/assets/fonts/absolute.ppf")
+small_font = font.ark
+large_font = font.absolute
 
 # Colors
 white = color.rgb(235, 245, 255)

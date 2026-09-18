@@ -5,8 +5,8 @@ import random
 sys.path.insert(0, "/system/apps/invaders")
 os.chdir("/system/apps/invaders")
 
-large_font = font.load("/system/assets/fonts/ziplock.ppf")
-small_font = font.load("/system/assets/fonts/nope.ppf")
+large_font = font.ziplock
+small_font = font.nope
 
 
 class GameState:

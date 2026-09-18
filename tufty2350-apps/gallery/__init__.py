@@ -4,7 +4,7 @@ import os
 sys.path.insert(0, "/system/apps/gallery")
 os.chdir("/system/apps/gallery")
 
-screen.font = font.load("/system/assets/fonts/nope.ppf")
+screen.font = font.nope
 screen.antialias = image.X2
 
 # Build list of PNG image files

@@ -6,7 +6,7 @@ icons = SpriteSheet("assets/icons.png", 4, 1)
 arrows = SpriteSheet("assets/arrows.png", 3, 1)
 
 # load in the font - font sheet generated from
-screen.font = font.load("/system/assets/fonts/ark.ppf")
+screen.font = font.ark
 
 # brushes to match monas stats
 stats_brushes = {

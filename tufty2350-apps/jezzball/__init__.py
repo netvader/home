@@ -330,7 +330,7 @@ class Divider:
 
 def init():
     """Initialize the game"""
-    screen.font = font.load("/system/assets/fonts/nope.ppf")
+    screen.font = font.nope
     start_level()
 
 def start_level():
