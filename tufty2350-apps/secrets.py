@@ -32,3 +32,10 @@ GITHUB_TOKEN = ""
 # ------------------------ WLED Settings -----------------------
 # Optional: WLED device configuration (for WLED controller app)
 # WLED_IP = "192.168.1.100"
+
+# ------------------------ WiGLE Settings -----------------------
+# For the wigle app. Get your API Name + Token from https://wigle.net/account
+# (log in first, then the account page has an "API" section with both).
+WIGLE_USERNAME = ""
+WIGLE_API_NAME = ""
+WIGLE_API_TOKEN = ""

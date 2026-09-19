@@ -168,3 +168,28 @@ Notes:
 - A *soft* reset issued over `mpremote` doesn't reliably register as the
   `PWRON_RESET` cause the patch looks for - to actually test it, power-cycle
   the badge or press its physical RESET button, not `mpremote reset`.
+
+## `wigle`
+
+A new app (not ported from `badge25` - written for this port) showing
+[WiGLE](https://wigle.net) wardriving stats: WiFi/Bluetooth/cell networks
+found, overall rank, and this month's rank - each with the change since
+last month. Uses WiGLE's official `/api/v2/stats/user` endpoint, which
+also hands back a link to that account's own badge image (colour-coded by
+network count tier); the app fetches and displays that image directly
+from WiGLE's server rather than redrawing it, so it's always the real,
+current badge for the configured account.
+
+Needs a WiGLE account with an API Name + Token (from
+[wigle.net/account](https://wigle.net/account)) in `secrets.py`:
+
+```python
+WIGLE_USERNAME = "yourusername"
+WIGLE_API_NAME = "..."
+WIGLE_API_TOKEN = "..."
+```
+
+Runs at the panel's full 320x240 resolution (`badge.mode(HIRES)`) rather
+than the 160x120 most other apps in this repo use - it needs the room for
+WiGLE's badge image (200px wide) plus five stats spread across the full
+width without overlapping.
